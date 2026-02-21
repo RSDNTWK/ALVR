@@ -65,6 +65,14 @@ Hmd::~Hmd() {
 #endif
 }
 
+bool Hmd::ComputeInverseDistortion(vr::HmdVector2_t *pResult, vr::EVREye eEye, uint32_t unChannel, float fU, float fV) {
+    // For ALVR, this can often be a no-op or default to identity projection:
+    pResult->v[0] = 0.0f;
+    pResult->v[1] = 0.0f;
+    return true; // success
+}
+
+
 bool Hmd::activate() {
     Debug("Hmd::Activate");
 

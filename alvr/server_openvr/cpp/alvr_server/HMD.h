@@ -46,6 +46,16 @@ private:
 
     std::wstring m_adapterName;
 
+// In HMD.h (or wherever Hmd is defined)
+virtual bool ComputeInverseDistortion(
+    vr::HmdVector2_t *pResult,
+    vr::EVREye eEye,
+    uint32_t unChannel,
+    float fU,
+    float fV
+) override;
+
+
 #ifdef _WIN32
     std::shared_ptr<CD3DRender> m_D3DRender;
 #endif
